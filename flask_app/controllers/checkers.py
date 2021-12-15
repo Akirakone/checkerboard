@@ -1,5 +1,8 @@
-for flask import flask, render_template ,request
-app= flask(__name__)
+import flask_app
+
+
+from flask_app import app
+from flask import render_template ,request
 
 print (__name__)
 
@@ -8,8 +11,8 @@ def checkerboard():
     return render_template("index.html", row = 8, column = 8, color1 = "red", color2 = "green")
 
 @app.route("/<int:num>")
-def checkerboard2(num):
-    return render_template("index.html", row = num, column = 8, color1 = "red", color2 = "greeen")
+def checkerboardtwo(num):
+    return render_template("index.html", row = num, column = 8, color1 = "red", color2 = "green")
 
 @app.route("/<int:num>/<int:num2>")
 def checkerboard3(num, num2):
